@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  become: true
+  become_user: root
+  
+  tasks:
+  - name: Start docker
+    service: name=docker state=started
+    
+  - name: create docker image
+    commad: docker build -t apache:kamesh
+    
+  - name: create tag for the image
+    commad: docker tag apache:kamesh kameshcmc/apache:kamesh
+    
+  - name: docker login
+    commad: docker login -u kameshcmc -p Kamesh123!!
+    
+  - name: docker push the new image
+    command: docker push kameshcmc/apache:kamesh
+    
+  - name: run the image on the docker swarm after swarm created outside this playbook
+    command: docker stack deploy -c kams-service.yml kams
+   
+  
