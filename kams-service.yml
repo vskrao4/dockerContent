@@ -11,8 +11,3 @@ services:
       replicas: 4
 volumes:
   kamsvol: {}
-
-  
-  
-
-sudo docker stack deploy -c kams-service.yml kams
