@@ -8,13 +8,13 @@
     service: name=docker state=started
     
   - name: create docker image
-    commad: docker build -t apache:kamesh .
+    command: docker build -t apache:kamesh .
     
   - name: create tag for the image
-    commad: docker tag apache:kamesh kameshcmc/apache:kamesh
+    command: docker tag apache:kamesh kameshcmc/apache:kamesh
     
   - name: docker login
-    commad: docker login -u kameshcmc -p Kamesh123!!
+    command: docker login -u kameshcmc -p Kamesh123!!
     
   - name: docker push the new image
     command: docker push kameshcmc/apache:kamesh
