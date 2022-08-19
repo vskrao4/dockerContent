@@ -4,6 +4,8 @@
   become_user: root
 
   tasks:
+  - name: Start docker
+    service: name=docker state=started
+    
   - name: run the image on the docker swarm after swarm created outside this playbook
     command: docker stack deploy -c kams-service.yml kams
-
