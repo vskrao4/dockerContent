@@ -7,7 +7,7 @@ services:
       - 8082:80
     volumes:
       - kamsvol:/var/www/dockerContent/log
-    delploy:
+    deploy:
       replicas: 4
 
 volumes:
