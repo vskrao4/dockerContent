@@ -8,7 +8,7 @@
     service: name=docker state=started
 
   - name: create docker image
-    command: docker build -t apache:kamesh -f $WORKSPACE/Dockerfile $WORKSPACE
+    command: docker build -t apache:kamesh -f $DOCKER_FILE_DIR/Dockerfile $DOCKER_FILE_DIR
 
   - name: create tag for the image
     command: docker tag apache:kamesh kameshcmc/apache:kamesh
