@@ -2,4 +2,4 @@ localhost
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
 ansible_connetion=ssh
-ansible_ssh_common_args='-o StrictHostKeyCheking=no'
+ansible_ssh_host_key_checking=false
