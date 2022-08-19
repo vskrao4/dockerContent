@@ -8,4 +8,4 @@
     service: name=docker state=started
     
   - name: run the image on the docker swarm after swarm created outside this playbook
-    command: docker stack deploy -c {{WORKSPACE}}/kams-service.yml kams
+    command: docker stack deploy -c {{DOCKER_FILE_DIR}}/kams-service.yml kams
